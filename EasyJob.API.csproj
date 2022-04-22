@@ -20,4 +20,12 @@
         <PackageReference Include="Swashbuckle.AspNetCore.Annotations" Version="6.3.0" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Notifications\Controllers" />
+      <Folder Include="Notifications\Domain" />
+      <Folder Include="Notifications\Persistence" />
+      <Folder Include="Notifications\Resources" />
+      <Folder Include="Notifications\Services" />
+    </ItemGroup>
+
 </Project>
