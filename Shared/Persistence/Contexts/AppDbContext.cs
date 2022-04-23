@@ -1,6 +1,7 @@
 using AutoMapper;
 using EasyJob.API.Applicants.Domain.Models;
 using EasyJob.API.Applicants.Resources;
+using EasyJob.API.Notifications.Domain.Models;
 using Go2Climb.API.Extensions;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -10,6 +11,7 @@ namespace Go2Climb.API.Persistence.Contexts
     public class AppDbContext : DbContext
     {
         public DbSet<Applicant> Applicants { get; set; }
+        public DbSet<Notification> Notifications { get; set; }
 
         protected readonly IConfiguration _configuration;
 
@@ -37,6 +39,11 @@ namespace Go2Climb.API.Persistence.Contexts
             builder.Entity<Applicant>().Property(p => p.Password).IsRequired().HasMaxLength(25);
             builder.Entity<Applicant>().Property(p => p.Photo);
             
+            builder.Entity<Notification>().ToTable("Notifications");
+            builder.Entity<Notification>().HasKey(p => p.Id);
+            builder.Entity<Notification>().Property(p => p.Title).IsRequired().ValueGeneratedOnAdd();
+            builder.Entity<Notification>().Property(p => p.Description).IsRequired().HasMaxLength(100);
+            builder.Entity<Notification>().Property(p => p.Date).IsRequired().HasMaxLength(100);
             /*
             Example
             //Constrains
