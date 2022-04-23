@@ -2,6 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using EasyJob.API.Announcements.Domain.Repositories;
+using EasyJob.API.Announcements.Domain.Services;
+using EasyJob.API.Announcements.Persistence.Repository;
+using EasyJob.API.Announcements.Services;
 using EasyJob.API.Applicants.Domain.Repositories;
 using EasyJob.API.Applicants.Domain.Services;
 using EasyJob.API.Applicants.Persistence.Repository;
@@ -10,6 +14,10 @@ using EasyJob.API.Postulants.Domain;
 using EasyJob.API.Postulants.Domain.Repository;
 using EasyJob.API.Postulants.Persistence.Repository;
 using EasyJob.API.Postulants.Services;
+//**using EasyJob.API.Projects.Domain.Repositories;
+//**using EasyJob.API.Projects.Domain.Services;
+//**using EasyJob.API.Projects.Persistence.Repository;
+//**using EasyJob.API.Projects.Services;
 using Go2Climb.API.Domain.Repositories;
 using Go2Climb.API.Persistence.Contexts;
 using Go2Climb.API.Persistence.Repositories;
@@ -60,6 +68,12 @@ namespace EasyJob.API
             services.AddScoped<IPostulantService, PostulantService>();
             services.AddScoped<IPostulantRepository, PostulantRepository>();
             
+            services.AddScoped<IAnnouncementService,AnnouncementService>();
+            services.AddScoped<IAnnouncementRepository, AnnouncementRepository>();
+            
+            
+           //** services.AddScoped<IProjectService,ProjectService>();
+           //** services.AddScoped<IProjectRepository, ProjectRepository>();
             //AutoMapper Dependency Injection 
             //services.AddAutoMapper(typeof(Startup));
 
