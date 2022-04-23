@@ -2,6 +2,7 @@ using Go2Climb.API.Domain.Services.Communication;
 using AutoMapper;
 using EasyJob.API.Applicants.Domain.Models;
 using EasyJob.API.Applicants.Resources;
+using EasyJob.API.Postulants.Resources;
 
 namespace Go2Climb.API.Mapping
 {
@@ -11,6 +12,7 @@ namespace Go2Climb.API.Mapping
         {
             /*CreateMap<SaveDestinationResource, Destination>();*/
             CreateMap<SaveApplicantResource, Applicant>();
+            CreateMap<SavePostulantResource, PostulantResource>();
         }
     }
 }

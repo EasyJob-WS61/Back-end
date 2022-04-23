@@ -6,6 +6,10 @@ using EasyJob.API.Applicants.Domain.Repositories;
 using EasyJob.API.Applicants.Domain.Services;
 using EasyJob.API.Applicants.Persistence.Repository;
 using EasyJob.API.Applicants.Services;
+using EasyJob.API.Postulants.Domain;
+using EasyJob.API.Postulants.Domain.Repository;
+using EasyJob.API.Postulants.Persistence.Repository;
+using EasyJob.API.Postulants.Services;
 using Go2Climb.API.Domain.Repositories;
 using Go2Climb.API.Persistence.Contexts;
 using Go2Climb.API.Persistence.Repositories;
@@ -53,6 +57,8 @@ namespace EasyJob.API
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<IApplicantService, ApplicantService>();
             services.AddScoped<IApplicantRepository, ApplicantRepository>();
+            services.AddScoped<IPostulantService, PostulantService>();
+            services.AddScoped<IPostulantRepository, PostulantRepository>();
             
             //AutoMapper Dependency Injection 
             //services.AddAutoMapper(typeof(Startup));
