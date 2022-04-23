@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "wy+i+QCUU89GLl3ciB1vMmOA8ZclxnxRuho7zQ7XM7M6IjY928ybJu7b1Lw1BUZdPycW3jCloTz8Yfbad00CFQ==",
+  "dgSpecHash": "miBJ0RfA+hv6Hab5jQHxCLmUrzFSfKZXZDqAeMtdSUJjRqHmg9X5ZKnsLzkVsRWp1BiPw2yhvuHm7EUCxQnoxQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\luis_\\OneDrive\\Escritorio\\backend\\Back-end\\EasyJob.API.csproj",
+  "projectFilePath": "C:\\Users\\luis_\\OneDrive\\Escritorio\\backend\\prueba\\Back-end\\EasyJob.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\luis_\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
     "C:\\Users\\luis_\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\11.0.0\\automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",

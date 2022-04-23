@@ -2243,11 +2243,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\luis_\\OneDrive\\Escritorio\\backend\\Back-end\\EasyJob.API.csproj",
+      "projectUniqueName": "C:\\Users\\luis_\\OneDrive\\Escritorio\\backend\\prueba\\Back-end\\EasyJob.API.csproj",
       "projectName": "EasyJob.API",
-      "projectPath": "C:\\Users\\luis_\\OneDrive\\Escritorio\\backend\\Back-end\\EasyJob.API.csproj",
+      "projectPath": "C:\\Users\\luis_\\OneDrive\\Escritorio\\backend\\prueba\\Back-end\\EasyJob.API.csproj",
       "packagesPath": "C:\\Users\\luis_\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\luis_\\OneDrive\\Escritorio\\backend\\Back-end\\obj\\",
+      "outputPath": "C:\\Users\\luis_\\OneDrive\\Escritorio\\backend\\prueba\\Back-end\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "D:\\Visual Studio\\COMPARTIR\\NuGetPackages",
