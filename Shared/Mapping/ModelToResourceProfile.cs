@@ -13,6 +13,8 @@ using EasyJob.API.Notifications.Domain.Models;
 using EasyJob.API.Notifications.Resources;
 using EasyJob.API.Payments.Domain.Models;
 using EasyJob.API.Payments.Resources;
+using EasyJob.API.Projects.Domain.Models;
+using EasyJob.API.Projects.Resources;
 using Go2Climb.API.Domain.Services.Communication;
 
 namespace Go2Climb.API.Mapping
@@ -21,7 +23,6 @@ namespace Go2Climb.API.Mapping
     {
         public ModelToResourceProfile()
         {
-            /*CreateMap<Destination, DestinationResource>();*/
             CreateMap<Applicant, ApplicantResource>();
             CreateMap<Postulant, PostulantResource>();
             CreateMap<Announcement, AnnouncementResource>();
@@ -29,6 +30,7 @@ namespace Go2Climb.API.Mapping
             CreateMap<Interview, InterviewResources>();
             CreateMap<Notification, NotificationResource>();
             CreateMap<Payment, PaymentResource>();
+            CreateMap<Project, ProjectResource>();
         }
     }
 }
