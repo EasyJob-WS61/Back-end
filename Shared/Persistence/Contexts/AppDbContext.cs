@@ -7,6 +7,7 @@ using EasyJob.API.Postulants.Domain.Models;
 using EasyJob.API.Interviews.Domain.Models;
 using EasyJob.API.Messages.Domain.Models;
 using EasyJob.API.Notifications.Domain.Models;
+using EasyJob.API.Payments.Domain.Models;
 using Go2Climb.API.Extensions;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -22,6 +23,7 @@ namespace Go2Climb.API.Persistence.Contexts
         public DbSet<Message> Messages { get; set; }
         public DbSet<Interview> Interviews { get; set; }
         public DbSet<Notification> Notifications { get; set; }
+        public DbSet<Payment> Payments { get; set; }
 
         protected readonly IConfiguration _configuration;
 
@@ -112,6 +114,11 @@ namespace Go2Climb.API.Persistence.Contexts
                 .HasMany(p => p.Hotels)
                 .WithOne(p => p.Destination)
                 .HasForeignKey(p => p.DestinationId);*/
+            
+            
+            builder.Entity<Payment>().ToTable("Payments");
+            builder.Entity<Payment>().HasKey(p => p.Id);
+            builder.Entity<Payment>().Property(p => p.Method).IsRequired().HasMaxLength(25);
             
             builder.UseSnakeCaseNamingConventions();
         }

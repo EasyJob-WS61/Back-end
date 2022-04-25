@@ -29,6 +29,11 @@ using EasyJob.API.Notifications.Domain.Repositories;
 using EasyJob.API.Notifications.Domain.Services;
 using EasyJob.API.Notifications.Persistence.Repository;
 using EasyJob.API.Notifications.Services;
+using EasyJob.API.Payments.Domain.Repositories;
+using EasyJob.API.Payments.Domain.Services;
+using EasyJob.API.Payments.Domain.Services.Communication;
+using EasyJob.API.Payments.Persistence.Repository;
+using EasyJob.API.Payments.Services;
 using Go2Climb.API.Domain.Repositories;
 using Go2Climb.API.Persistence.Contexts;
 using Go2Climb.API.Persistence.Repositories;
@@ -80,19 +85,18 @@ namespace EasyJob.API
             services.AddScoped<IPostulantRepository, PostulantRepository>();
             services.AddScoped<IAnnouncementService,AnnouncementService>();
             services.AddScoped<IAnnouncementRepository, AnnouncementRepository>();
-            
-            
-           //** services.AddScoped<IProjectService,ProjectService>();
-           //** services.AddScoped<IProjectRepository, ProjectRepository>();
-
             services.AddScoped<IMessageServices, MessageServices>();
             services.AddScoped<IMessagesRepository, MessageRepository>();
-            
             services.AddScoped<IInterviewServices, InterviewServices>();
             services.AddScoped<IInterviewsRepository, InterviewRepository>();
             services.AddScoped<INotificationService, NotificationService>();
             services.AddScoped<INotificationRepository, NotificationRepository>();
+            services.AddScoped<IPaymentService, PaymentService>();
+            services.AddScoped<IPaymentRepository, PaymentRepository>();
             
+            //** services.AddScoped<IProjectService,ProjectService>();
+            //** services.AddScoped<IProjectRepository, ProjectRepository>();
+
             //AutoMapper Dependency Injection 
             //services.AddAutoMapper(typeof(Startup));
 

@@ -14,6 +14,8 @@ using EasyJob.API.Messages.Resources;
 using EasyJob.API.Postulants.Domain.Models;
 using EasyJob.API.Notifications.Domain.Models;
 using EasyJob.API.Notifications.Resources;
+using EasyJob.API.Payments.Domain.Models;
+using EasyJob.API.Payments.Resources;
 
 namespace Go2Climb.API.Mapping
 {
@@ -29,6 +31,7 @@ namespace Go2Climb.API.Mapping
             CreateMap<SaveMessageResource, Message>();
             CreateMap<SaveInterviewResource, Interview>();
             CreateMap<SaveNotificationResource, Notification>();
+            CreateMap<SavePaymentResource, Payment>();
         }
     }
 }
