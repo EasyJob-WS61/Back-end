@@ -58,7 +58,6 @@ namespace EasyJob.API.Interviews.Services
             var existingInterview = await _interviewsRepository.FindById(id);
             if (existingInterview == null)
                 return new InterviewResponse("Interview not found");
-            existingInterview.Id= interview.Id;
             existingInterview.Date= interview.Date;
             existingInterview.Hora= interview.Hora;
             existingInterview.Link= interview.Link;

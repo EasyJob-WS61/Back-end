@@ -56,7 +56,6 @@ namespace EasyJob.API.Messages.Services
             var existingMessage = await _messagesRepository.FindById(id);
             if (existingMessage == null)
                 return new MessageResponse("Applicant not found");
-            existingMessage.Id = message.Id;
             existingMessage.Description= message.Description;
             existingMessage.Date= message.Date;
             

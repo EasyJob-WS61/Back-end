@@ -35,8 +35,8 @@ namespace EasyJob.API.Messages.Controllers
             Tags = new[] {"Messages"})]
         public async Task<IEnumerable<MessagesResources>> GetAllAsync()
         {
-            var applicants = await _messageServices.ListAsync();
-            var resources = _mapper.Map<IEnumerable<Message>, IEnumerable<MessagesResources>>(applicants);
+            var messages = await _messageServices.ListAsync();
+            var resources = _mapper.Map<IEnumerable<Message>, IEnumerable<MessagesResources>>(messages);
             return resources;
         }
 
@@ -65,15 +65,15 @@ namespace EasyJob.API.Messages.Controllers
             if (!ModelState.IsValid)
                 return BadRequest(ModelState.GetErrorMessages());
 
-            var activity = _mapper.Map<SaveMessageResource, Message>(resource);
-            var result = await _messageServices.SaveAsync(activity);
+            var message = _mapper.Map<SaveMessageResource, Message>(resource);
+            var result = await _messageServices.SaveAsync(message);
 
             if (!result.Success)
                 return BadRequest(result.Message);
             
-            var activityResource = _mapper.Map<Message, MessagesResources>(result.Resource);
+            var messagesResources = _mapper.Map<Message, MessagesResources>(result.Resource);
 
-            return Ok(activityResource);
+            return Ok(messagesResources);
         }
         
         [HttpPut("{id}")]
@@ -86,16 +86,16 @@ namespace EasyJob.API.Messages.Controllers
             if (!ModelState.IsValid)
                 return BadRequest(ModelState.GetErrorMessages());
             
-            var applicant = _mapper.Map<SaveMessageResource, Message>(resource);
+            var message = _mapper.Map<SaveMessageResource, Message>(resource);
 
-            var result = await _messageServices.UpdateAsync(id, applicant);
+            var result = await _messageServices.UpdateAsync(id, message);
             
             if (!result.Success)
                 return BadRequest(result.Message);
 
-            var applicantResource = _mapper.Map<Message, MessagesResources>(result.Resource);
+            var messagesResources = _mapper.Map<Message, MessagesResources>(result.Resource);
 
-            return Ok(applicantResource);
+            return Ok(messagesResources);
         }
         
         [HttpDelete("{id}")]
@@ -110,9 +110,9 @@ namespace EasyJob.API.Messages.Controllers
             if (!result.Success)
                 return BadRequest(result.Message);
             
-            var applicantResource = _mapper.Map<Message, MessagesResources>(result.Resource);
+            var messagesResources = _mapper.Map<Message, MessagesResources>(result.Resource);
             
-            return Ok(applicantResource);
+            return Ok(messagesResources);
         }
     }
     

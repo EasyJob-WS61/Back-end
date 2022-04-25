@@ -4,10 +4,6 @@ namespace EasyJob.API.Interviews.Resources
     public class SaveInterviewResource
     {
         [Required]
-        [MaxLength(25)]
-        public int Id { get; set; }
-        
-        [Required]
         [MaxLength(50)]
         public string Date { get; set; }
         

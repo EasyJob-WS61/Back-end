@@ -36,8 +36,8 @@ namespace EasyJob.API.Interviews.Controllers
             Tags = new[] {"Interviews"})]
         public async Task<IEnumerable<InterviewResources>> GetAllAsync()
         {
-            var applicants = await _interviewService.ListAsync();
-            var resources = _mapper.Map<IEnumerable<Interview>, IEnumerable<InterviewResources>>(applicants);
+            var interviews = await _interviewService.ListAsync();
+            var resources = _mapper.Map<IEnumerable<Interview>, IEnumerable<InterviewResources>>(interviews);
             return resources;
         }
 
@@ -66,15 +66,15 @@ namespace EasyJob.API.Interviews.Controllers
             if (!ModelState.IsValid)
                 return BadRequest(ModelState.GetErrorMessages());
 
-            var activity = _mapper.Map<SaveInterviewResource, Interview>(resource);
-            var result = await _interviewService.SaveAsync(activity);
+            var interview = _mapper.Map<SaveInterviewResource, Interview>(resource);
+            var result = await _interviewService.SaveAsync(interview);
 
             if (!result.Success)
                 return BadRequest(result.Message);
             
-            var activityResource = _mapper.Map<Interview, InterviewResources>(result.Resource);
+            var interviewResources = _mapper.Map<Interview, InterviewResources>(result.Resource);
 
-            return Ok(activityResource);
+            return Ok(interviewResources);
         }
         
         [HttpPut("{id}")]
@@ -87,16 +87,16 @@ namespace EasyJob.API.Interviews.Controllers
             if (!ModelState.IsValid)
                 return BadRequest(ModelState.GetErrorMessages());
             
-            var applicant = _mapper.Map<SaveInterviewResource, Interview>(resource);
+            var interview = _mapper.Map<SaveInterviewResource, Interview>(resource);
 
-            var result = await _interviewService.UpdateAsync(id, applicant);
+            var result = await _interviewService.UpdateAsync(id, interview);
             
             if (!result.Success)
                 return BadRequest(result.Message);
 
-            var applicantResource = _mapper.Map<Interview, InterviewResources>(result.Resource);
+            var interviewResources = _mapper.Map<Interview, InterviewResources>(result.Resource);
 
-            return Ok(applicantResource);
+            return Ok(interviewResources);
         }
         
         [HttpDelete("{id}")]
@@ -111,9 +111,9 @@ namespace EasyJob.API.Interviews.Controllers
             if (!result.Success)
                 return BadRequest(result.Message);
             
-            var applicantResource = _mapper.Map<Interview, InterviewResources>(result.Resource);
+            var interviewResources = _mapper.Map<Interview, InterviewResources>(result.Resource);
             
-            return Ok(applicantResource);
+            return Ok(interviewResources);
         }
         
         
