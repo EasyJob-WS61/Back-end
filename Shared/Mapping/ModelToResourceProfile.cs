@@ -9,6 +9,9 @@ using EasyJob.API.Interviews.Domain.Models;
 using EasyJob.API.Interviews.Resources;
 using EasyJob.API.Messages.Domain.Models;
 using EasyJob.API.Messages.Resources;
+using EasyJob.API.Notifications.Domain.Models;
+using EasyJob.API.Notifications.Resources;
+
 using Go2Climb.API.Domain.Services.Communication;
 
 namespace Go2Climb.API.Mapping
@@ -23,6 +26,7 @@ namespace Go2Climb.API.Mapping
             CreateMap<Announcement, AnnouncementResource>();
             CreateMap<Message, MessagesResources>();
             CreateMap<Interview, InterviewResources>();
+            CreateMap<Notification, NotificationResource>();
         }
     }
 }

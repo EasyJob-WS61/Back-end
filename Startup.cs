@@ -25,6 +25,10 @@ using EasyJob.API.Interviews.Services;
 using EasyJob.API.Messages.Domain.Repositories;
 using EasyJob.API.Messages.Persistence.Repository;
 using EasyJob.API.Messages.Services;
+using EasyJob.API.Notifications.Domain.Repositories;
+using EasyJob.API.Notifications.Domain.Services;
+using EasyJob.API.Notifications.Persistence.Repository;
+using EasyJob.API.Notifications.Services;
 using Go2Climb.API.Domain.Repositories;
 using Go2Climb.API.Persistence.Contexts;
 using Go2Climb.API.Persistence.Repositories;
@@ -86,6 +90,9 @@ namespace EasyJob.API
             
             services.AddScoped<IInterviewServices, InterviewServices>();
             services.AddScoped<IInterviewsRepository, InterviewRepository>();
+            services.AddScoped<INotificationService, NotificationService>();
+            services.AddScoped<INotificationRepository, NotificationRepository>();
+            
             //AutoMapper Dependency Injection 
             //services.AddAutoMapper(typeof(Startup));
 
