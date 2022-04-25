@@ -50,14 +50,14 @@ namespace EasyJob.API.Notifications.Services
             }
         }
 
-        public async Task<NotificationResponse> UpdateAsync(int id, Notification activity)
+        public async Task<NotificationResponse> UpdateAsync(int id, Notification notification)
         {
             var existingNotification = await _notificationRepository.FindById(id);
             if (existingNotification == null)
                 return new NotificationResponse("notification not found");
-            existingNotification.Title = activity.Title;
-            existingNotification.Description = activity.Description;
-            existingNotification.Date = activity.Date;
+            existingNotification.Title = notification.Title;
+            existingNotification.Description = notification.Description;
+            existingNotification.Date = notification.Date;
             try
             {
                 _notificationRepository.Update(existingNotification);

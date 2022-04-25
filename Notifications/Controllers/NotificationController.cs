@@ -62,15 +62,15 @@ namespace EasyJob.API.Notifications.Controllers
             if (!ModelState.IsValid)
                 return BadRequest(ModelState.GetErrorMessages());
 
-            var activity = _mapper.Map<SaveNotificationResource, Notification>(resource);
-            var result = await _notificationService.SaveAsync(activity);
+            var notification = _mapper.Map<SaveNotificationResource, Notification>(resource);
+            var result = await _notificationService.SaveAsync(notification);
 
             if (!result.Success)
                 return BadRequest(result.Message);
             
-            var activityResource = _mapper.Map<Notification, NotificationResource>(result.Resource);
+            var notificationResource = _mapper.Map<Notification, NotificationResource>(result.Resource);
 
-            return Ok(activityResource);
+            return Ok(notificationResource);
         }
         
         [HttpPut("{id}")]
