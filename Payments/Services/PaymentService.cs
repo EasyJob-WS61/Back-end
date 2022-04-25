@@ -52,12 +52,12 @@ namespace EasyJob.API.Payments.Services
             }
         }
 
-        public async Task<PaymentResponse> UpdateAsync(int id, Payment activity)
+        public async Task<PaymentResponse> UpdateAsync(int id, Payment payment)
         {
             var existingPayment = await _paymentRepository.FindById(id);
             if (existingPayment == null)
                 return new PaymentResponse("Payment not found");
-            existingPayment.Method = activity.Method;
+            existingPayment.Method = payment.Method;
             try
             {
                 _paymentRepository.Update(existingPayment);

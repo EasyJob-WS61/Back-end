@@ -62,15 +62,15 @@ namespace EasyJob.API.Payments.Controllers
             if (!ModelState.IsValid)
                 return BadRequest(ModelState.GetErrorMessages());
 
-            var activity = _mapper.Map<SavePaymentResource, Payment>(resource);
-            var result = await _paymentService.SaveAsync(activity);
+            var payment = _mapper.Map<SavePaymentResource, Payment>(resource);
+            var result = await _paymentService.SaveAsync(payment);
 
             if (!result.Success)
                 return BadRequest(result.Message);
             
-            var activityResource = _mapper.Map<Payment, PaymentResource>(result.Resource);
+            var paymentResource = _mapper.Map<Payment, PaymentResource>(result.Resource);
 
-            return Ok(activityResource);
+            return Ok(paymentResource);
         }
         
         [HttpPut("{id}")]
