@@ -4,6 +4,8 @@ using EasyJob.API.Applicants.Domain.Models;
 using EasyJob.API.Applicants.Resources;
 using EasyJob.API.Postulants.Domain.Models;
 //**using EasyJob.API.Projects.Domain.Models;
+using EasyJob.API.Interviews.Domain.Models;
+using EasyJob.API.Messages.Domain.Models;
 using Go2Climb.API.Extensions;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -15,8 +17,9 @@ namespace Go2Climb.API.Persistence.Contexts
         public DbSet<Applicant> Applicants { get; set; }
         public DbSet<Postulant> Postulants { get; set; }
         public DbSet<Announcement> Announcements { get; set; }
-      //**  public DbSet<Project> Projects { get; set; }
-      
+        //**  public DbSet<Project> Projects { get; set; }
+        public DbSet<Message> Messages { get; set; }
+        public DbSet<Interview> Interviews { get; set; }
 
         protected readonly IConfiguration _configuration;
 
@@ -54,15 +57,14 @@ namespace Go2Climb.API.Persistence.Contexts
             builder.Entity<Postulant>().Property(p => p.Description).HasMaxLength(120);
             builder.Entity<Postulant>().Property(p => p.GithubUser).HasMaxLength(50);
 
-            builder.Entity<Announcement>().ToTable("Announcements");
-           builder.Entity<Announcement>().HasKey(p => p.Id);
-           builder.Entity<Announcement>().Property(p => p.Id).IsRequired().ValueGeneratedOnAdd();
-           builder.Entity<Announcement>().Property(p => p.Tittle).IsRequired().HasMaxLength(25);
-           builder.Entity<Announcement>().Property(p => p.Description).IsRequired().HasMaxLength(250);
-           builder.Entity<Announcement>().Property(p => p.Salary).IsRequired().HasMaxLength(120);
-           builder.Entity<Announcement>().Property(p => p.Date).IsRequired().HasMaxLength(25);
-           builder.Entity<Announcement>().Property(p => p.Visible).IsRequired().HasMaxLength(25);
-           builder.Entity<Announcement>().Property(p => p.Type_money);
+            builder.Entity<Announcement>().ToTable("Announcements"); builder.Entity<Announcement>().HasKey(p => p.Id);
+            builder.Entity<Announcement>().Property(p => p.Id).IsRequired().ValueGeneratedOnAdd();
+            builder.Entity<Announcement>().Property(p => p.Tittle).IsRequired().HasMaxLength(25);
+            builder.Entity<Announcement>().Property(p => p.Description).IsRequired().HasMaxLength(250);
+            builder.Entity<Announcement>().Property(p => p.Salary).IsRequired().HasMaxLength(120);
+            builder.Entity<Announcement>().Property(p => p.Date).IsRequired().HasMaxLength(25);
+            builder.Entity<Announcement>().Property(p => p.Visible).IsRequired().HasMaxLength(25);
+            builder.Entity<Announcement>().Property(p => p.Type_money);
             
           //* builder.Entity<Project>().ToTable("Project");
           //* builder.Entity<Project>().HasKey(p => p.Id);
@@ -73,6 +75,24 @@ namespace Go2Climb.API.Persistence.Contexts
           //* builder.Entity<Project>().Property(p => p.Photo).IsRequired().HasMaxLength(25);
           //* builder.Entity<Project>().Property(p => p.Postulants_id).IsRequired().HasMaxLength(35);
           
+            builder.Entity<Message>().ToTable("Messages");
+            builder.Entity<Message>().HasKey(p => p.Id);
+            builder.Entity<Message>().Property(p => p.Id).IsRequired().ValueGeneratedOnAdd();
+            builder.Entity<Message>().Property(p => p.Id).IsRequired().HasMaxLength(25);
+            builder.Entity<Message>().Property(p => p.Description).IsRequired().HasMaxLength(50);
+            builder.Entity<Message>().Property(p => p.Date).IsRequired().HasMaxLength(120);
+       
+            
+            builder.Entity<Interview>().ToTable("Interviews");
+            builder.Entity<Interview>().HasKey(p => p.Id);
+            builder.Entity<Interview>().Property(p => p.Id).IsRequired().ValueGeneratedOnAdd();
+            builder.Entity<Interview>().Property(p => p.Id).IsRequired().HasMaxLength(25);
+            builder.Entity<Interview>().Property(p => p.Date).IsRequired().HasMaxLength(50);
+            builder.Entity<Interview>().Property(p => p.Hora).IsRequired().HasMaxLength(120);
+            builder.Entity<Interview>().Property(p => p.Link).IsRequired().HasMaxLength(25);
+  
+           
+            
             /*
             Example
             //Constrains

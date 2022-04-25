@@ -18,6 +18,13 @@ using EasyJob.API.Postulants.Services;
 //**using EasyJob.API.Projects.Domain.Services;
 //**using EasyJob.API.Projects.Persistence.Repository;
 //**using EasyJob.API.Projects.Services;
+using EasyJob.API.Interviews.Domain.Repositories;
+using EasyJob.API.Interviews.Domain.Services;
+using EasyJob.API.Interviews.Persistence.Repository;
+using EasyJob.API.Interviews.Services;
+using EasyJob.API.Messages.Domain.Repositories;
+using EasyJob.API.Messages.Persistence.Repository;
+using EasyJob.API.Messages.Services;
 using Go2Climb.API.Domain.Repositories;
 using Go2Climb.API.Persistence.Contexts;
 using Go2Climb.API.Persistence.Repositories;
@@ -67,13 +74,18 @@ namespace EasyJob.API
             services.AddScoped<IApplicantRepository, ApplicantRepository>();
             services.AddScoped<IPostulantService, PostulantService>();
             services.AddScoped<IPostulantRepository, PostulantRepository>();
-            
             services.AddScoped<IAnnouncementService,AnnouncementService>();
             services.AddScoped<IAnnouncementRepository, AnnouncementRepository>();
             
             
            //** services.AddScoped<IProjectService,ProjectService>();
            //** services.AddScoped<IProjectRepository, ProjectRepository>();
+
+            services.AddScoped<IMessageServices, MessageServices>();
+            services.AddScoped<IMessagesRepository, MessageRepository>();
+            
+            services.AddScoped<IInterviewServices, InterviewServices>();
+            services.AddScoped<IInterviewsRepository, InterviewRepository>();
             //AutoMapper Dependency Injection 
             //services.AddAutoMapper(typeof(Startup));
 
