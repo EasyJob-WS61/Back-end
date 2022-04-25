@@ -6,7 +6,7 @@ namespace EasyJob.API.Projects.Resources
     {
         [Required]
         [MaxLength(50)]
-        public string Tittle { get; set; }
+        public string Title { get; set; }
         [Required]
         [MaxLength(250)]
         public string Description { get; set; }

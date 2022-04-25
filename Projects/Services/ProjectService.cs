@@ -51,19 +51,19 @@ namespace EasyJob.API.Projects.Services
 
         public async Task<ProjectResponse> UpdateAsync(int id, Project project)
         {
-            var existingApplicant = await _projectRepository.FindById(id);
-            if (existingApplicant == null)
+            var existingProject = await _projectRepository.FindById(id);
+            if (existingProject == null)
                 return new ProjectResponse("project not found");
-            existingApplicant.Description = project.Description;
-            existingApplicant.Photo= project.Photo;
-            existingApplicant.Postulants_id = project.Postulants_id;
-            existingApplicant.Tittle = project.Tittle;
-            existingApplicant.Url = project.Url;
+            existingProject.Description = project.Description;
+            existingProject.Photo= project.Photo;
+            existingProject.Postulants_id = project.Postulants_id;
+            existingProject.Title = project.Title;
+            existingProject.Url = project.Url;
             try
             {
-                _projectRepository.Update(existingApplicant);
+                _projectRepository.Update(existingProject);
                 await _unitOfWork.CompleteAsync();
-                return new ProjectResponse(existingApplicant);
+                return new ProjectResponse(existingProject);
             }
             catch (Exception e)
             {
@@ -73,14 +73,14 @@ namespace EasyJob.API.Projects.Services
 
         public async Task<ProjectResponse> DeleteAsync(int id)
         {
-            var existingApplicant = await _projectRepository.FindById(id);
-            if (existingApplicant == null)
+            var existingProject = await _projectRepository.FindById(id);
+            if (existingProject == null)
                 return new ProjectResponse("project not found");
             try
             {
-                _projectRepository.Remove(existingApplicant);
+                _projectRepository.Remove(existingProject);
                 await _unitOfWork.CompleteAsync();
-                return new ProjectResponse(existingApplicant);
+                return new ProjectResponse(existingProject);
             }
             catch (Exception e)
             {

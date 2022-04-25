@@ -34,8 +34,8 @@ namespace EasyJob.API.Projects.Controllers
             Tags = new[] {"Projects"})]
         public async Task<IEnumerable<ProjectResource>> GetAllAsync()
         {
-            var applicants = await _projectService.ListAsync();
-            var resources = _mapper.Map<IEnumerable<Project>, IEnumerable<ProjectResource>>(applicants);
+            var projects = await _projectService.ListAsync();
+            var resources = _mapper.Map<IEnumerable<Project>, IEnumerable<ProjectResource>>(projects);
             return resources;
         }
 
@@ -64,15 +64,15 @@ namespace EasyJob.API.Projects.Controllers
             if (!ModelState.IsValid)
                 return BadRequest(ModelState.GetErrorMessages());
 
-            var activity = _mapper.Map<SaveProjectResource, Project>(resource);
-            var result = await _projectService.SaveAsync(activity);
+            var project = _mapper.Map<SaveProjectResource, Project>(resource);
+            var result = await _projectService.SaveAsync(project);
 
             if (!result.Success)
                 return BadRequest(result.Message);
             
-            var activityResource = _mapper.Map<Project, ProjectResource>(result.Resource);
+            var projectResource = _mapper.Map<Project, ProjectResource>(result.Resource);
 
-            return Ok(activityResource);
+            return Ok(projectResource);
         }
         
         [HttpPut("{id}")]
@@ -85,16 +85,16 @@ namespace EasyJob.API.Projects.Controllers
             if (!ModelState.IsValid)
                 return BadRequest(ModelState.GetErrorMessages());
             
-            var applicant = _mapper.Map<SaveProjectResource, Project>(resource);
+            var project = _mapper.Map<SaveProjectResource, Project>(resource);
 
-            var result = await _projectService.UpdateAsync(id, applicant);
+            var result = await _projectService.UpdateAsync(id, project);
             
             if (!result.Success)
                 return BadRequest(result.Message);
 
-            var applicantResource = _mapper.Map<Project, ProjectResource>(result.Resource);
+            var projectResource = _mapper.Map<Project, ProjectResource>(result.Resource);
 
-            return Ok(applicantResource);
+            return Ok(projectResource);
         }
         
         [HttpDelete("{id}")]
@@ -109,9 +109,9 @@ namespace EasyJob.API.Projects.Controllers
             if (!result.Success)
                 return BadRequest(result.Message);
             
-            var applicantResource = _mapper.Map<Project, ProjectResource>(result.Resource);
+            var projectResource = _mapper.Map<Project, ProjectResource>(result.Resource);
             
-            return Ok(applicantResource);
+            return Ok(projectResource);
         }
         
         
