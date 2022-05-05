@@ -61,7 +61,6 @@ namespace EasyJob.API.Announcements.Services
             existingApplicant.Description = announcement.Description;
             existingApplicant.Salary = announcement.Salary;
             existingApplicant.Tittle = announcement.Tittle;
-            existingApplicant.Type_money = announcement.Type_money;
             existingApplicant.Visible = announcement.Visible;
             try
             {

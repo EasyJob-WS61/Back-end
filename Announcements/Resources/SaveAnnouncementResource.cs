@@ -17,9 +17,7 @@ namespace EasyJob.API.Announcements.Resources
         [Required]
         [MaxLength(15)]
         public string Date { get; set; }
-        [Required]
-        [MaxLength(50)]
-        public string Type_money { get; set; }
+       
         [Required]
         public int Visible { get; set; }
     }
