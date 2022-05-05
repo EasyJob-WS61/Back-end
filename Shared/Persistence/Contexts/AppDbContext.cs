@@ -68,7 +68,6 @@ namespace Go2Climb.API.Persistence.Contexts
             builder.Entity<Announcement>().Property(p => p.Salary).IsRequired().HasMaxLength(120);
             builder.Entity<Announcement>().Property(p => p.Date).IsRequired().HasMaxLength(25);
             builder.Entity<Announcement>().Property(p => p.Visible).IsRequired().HasMaxLength(25);
-            builder.Entity<Announcement>().Property(p => p.Type_money);
             
             builder.Entity<Project>().ToTable("Project");
             builder.Entity<Project>().HasKey(p => p.Id);
