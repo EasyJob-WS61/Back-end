@@ -60,6 +60,7 @@ namespace EasyJob.API.Postulants.Services
             existingApplicant.Password = postulant.Password;
             existingApplicant.Description = postulant.Description;
             existingApplicant.GithubUser = postulant.GithubUser;
+            existingApplicant.IdPayment = postulant.IdPayment;
             try
             {
                 _postulantRepository.Update(existingApplicant);

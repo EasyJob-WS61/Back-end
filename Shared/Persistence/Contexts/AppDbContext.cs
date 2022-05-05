@@ -60,6 +60,7 @@ namespace Go2Climb.API.Persistence.Contexts
             builder.Entity<Postulant>().Property(p => p.Password).IsRequired().HasMaxLength(25);
             builder.Entity<Postulant>().Property(p => p.Description).HasMaxLength(120);
             builder.Entity<Postulant>().Property(p => p.GithubUser).HasMaxLength(50);
+            builder.Entity<Postulant>().Property(p => p.IdPayment);
 
             builder.Entity<Announcement>().ToTable("Announcements"); builder.Entity<Announcement>().HasKey(p => p.Id);
             builder.Entity<Announcement>().Property(p => p.Id).IsRequired().ValueGeneratedOnAdd();

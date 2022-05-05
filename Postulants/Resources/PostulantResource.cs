@@ -9,5 +9,6 @@ namespace EasyJob.API.Postulants.Resources
         public string Email { get; set; }
         public string Password { get; set; }
         public string GithubUser { get; set; }
+        public int IdPayment { get; set; }
     }
 }
