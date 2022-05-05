@@ -99,10 +99,16 @@ namespace Go2Climb.API.Persistence.Contexts
             builder.Entity<Notification>().Property(p => p.Title).IsRequired().ValueGeneratedOnAdd();
             builder.Entity<Notification>().Property(p => p.Description).IsRequired().HasMaxLength(100);
             builder.Entity<Notification>().Property(p => p.Date).IsRequired().HasMaxLength(100);
+            builder.Entity<Notification>().Property(p => p.Feedback).IsRequired().HasMaxLength(300);
+            builder.Entity<Notification>().Property(p => p.PostulantId).IsRequired().HasMaxLength(25);
+            builder.Entity<Notification>().Property(p => p.ApplicantId).IsRequired().HasMaxLength(25);
+            builder.Entity<Notification>().Property(p => p.AnnouncementId).IsRequired().HasMaxLength(25);
+            
             
             builder.Entity<Payment>().ToTable("Payments");
             builder.Entity<Payment>().HasKey(p => p.Id);
-            builder.Entity<Payment>().Property(p => p.Method).IsRequired().HasMaxLength(25);
+            builder.Entity<Payment>().Property(p => p.Name).IsRequired().HasMaxLength(25);
+            builder.Entity<Payment>().Property(p => p.Cost).IsRequired().HasMaxLength(600);
             
             /*
             //Relationship

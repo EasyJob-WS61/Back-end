@@ -2236,24 +2236,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\hbcor\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\Elizabeth\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\hbcor\\Desktop\\EasyJob\\Back-end\\EasyJob.API.csproj",
+      "projectUniqueName": "D:\\documentos\\CICLO 6\\EVOLUCION DE SOFTWARE\\Back-end44\\EasyJob.API.csproj",
       "projectName": "EasyJob.API",
-      "projectPath": "C:\\Users\\hbcor\\Desktop\\EasyJob\\Back-end\\EasyJob.API.csproj",
-      "packagesPath": "C:\\Users\\hbcor\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\hbcor\\Desktop\\EasyJob\\Back-end\\obj\\",
+      "projectPath": "D:\\documentos\\CICLO 6\\EVOLUCION DE SOFTWARE\\Back-end44\\EasyJob.API.csproj",
+      "packagesPath": "C:\\Users\\Elizabeth\\.nuget\\packages\\",
+      "outputPath": "D:\\documentos\\CICLO 6\\EVOLUCION DE SOFTWARE\\Back-end44\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\hbcor\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\Elizabeth\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

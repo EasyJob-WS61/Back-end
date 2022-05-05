@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
-using EasyJob.API.Applicants.Domain.Models;
-using EasyJob.API.Applicants.Domain.Repositories;
 using EasyJob.API.Notifications.Domain.Models;
 using EasyJob.API.Notifications.Domain.Repositories;
 using Go2Climb.API.Persistence.Contexts;
@@ -38,6 +37,22 @@ namespace EasyJob.API.Notifications.Persistence.Repository
         public void Remove(Notification notification)
         {
             _context.Notifications.Remove(notification);
+        }
+        
+        public async Task<IEnumerable<Notification>> ListByPostulantIdAsync(int postulantId)
+        {
+            
+            return await _context.Notifications
+                .Where(pt => pt.PostulantId == postulantId)
+                .ToListAsync();
+        }
+        
+        public async Task<IEnumerable<Notification>> ListByApplicantIdAsync(int applicantId)
+        {
+            return await _context.Notifications
+                .Where(pt => pt.ApplicantId == applicantId)
+                .Include(pt => pt.Applicant)
+                .ToListAsync();
         }
     }
 }

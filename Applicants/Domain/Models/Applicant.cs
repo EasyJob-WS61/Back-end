@@ -1,4 +1,7 @@
-﻿namespace EasyJob.API.Applicants.Domain.Models
+﻿using System.Collections.Generic;
+using EasyJob.API.Notifications.Domain.Models;
+
+namespace EasyJob.API.Applicants.Domain.Models
 {
     public class Applicant
     {
@@ -8,5 +11,7 @@
         public string Email { get; set; }
         public string Password { get; set; }
         public string Photo { get; set; }
+        public List<Notification> Notifications { get; set; }
+
     }
 }

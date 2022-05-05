@@ -15,6 +15,19 @@ namespace EasyJob.API.Notifications.Resources
         [Required]
         [MaxLength(10)]
         public string Date { get; set; }
+        
+        [Required]
+        [MaxLength(500)]
+        public string Feedback { get; set; }
+        
+        [Required]
+        public int ApplicantId { get; set; }
+        
+        [Required]
+        public int PostulantId { get; set; }
+        
+        [Required]
+        public int AnnouncementId { get; set; }
 
     }
 }

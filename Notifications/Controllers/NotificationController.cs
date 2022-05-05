@@ -45,12 +45,40 @@ namespace EasyJob.API.Notifications.Controllers
         public async Task<IActionResult> GetByIdAsync(int id)
         {
             var result = await _notificationService.GetById(id);
-        
+            
             if (!result.Success)
                 return BadRequest(result.Message);
             
             return Ok(result.Resource);
         }
+        
+        [HttpGet]
+        [Route("/api/v1/Notification/{postulantId}/[controller]")]
+        [SwaggerOperation(
+            Summary = "Get notifications postulant By Id",
+            Description = "Add A notification to Database.",
+            Tags = new[] {"Notifications"})]
+        public async Task<IEnumerable<NotificationResource>> GetNotificationByPostulantId(int postulantId)
+        {
+            var notifications = await _notificationService.ListByPostulantIdAsync(postulantId);
+            var resources = _mapper.Map<IEnumerable<Notification>, IEnumerable<NotificationResource>>(notifications);
+            return resources;
+        }
+        
+        [HttpGet]
+        
+        [Route("/api/v1/Notification/{applicantId}/[controller]")]
+        [SwaggerOperation(
+            Summary = "Get notifications applicant By Id",
+            Description = "Add A notification to Database.",
+            Tags = new[] {"Notifications"})]
+        public async Task<IEnumerable<NotificationResource>> GetNotificationByApplicantId(int applicantId)
+        {
+            var notifications = await _notificationService.ListByApplicantIdAsync(applicantId);
+            var resources = _mapper.Map<IEnumerable<Notification>, IEnumerable<NotificationResource>>(notifications);
+            return resources;
+        }
+        
         
         [HttpPost]
         [SwaggerOperation(

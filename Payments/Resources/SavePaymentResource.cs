@@ -6,6 +6,9 @@ namespace EasyJob.API.Payments.Resources
     {
         [Required]
         [MaxLength(100)]
-        public string Method { get; set; }
+        public string Name { get; set; }
+        
+        [Required]
+        public int Cost { get; set; }
     }
 }

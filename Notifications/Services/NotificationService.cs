@@ -58,6 +58,10 @@ namespace EasyJob.API.Notifications.Services
             existingNotification.Title = notification.Title;
             existingNotification.Description = notification.Description;
             existingNotification.Date = notification.Date;
+            existingNotification.Feedback = notification.Feedback;
+            existingNotification.PostulantId = notification.PostulantId;
+            existingNotification.ApplicantId = notification.ApplicantId;
+            existingNotification.AnnouncementId = notification.AnnouncementId;
             try
             {
                 _notificationRepository.Update(existingNotification);
@@ -85,6 +89,16 @@ namespace EasyJob.API.Notifications.Services
             {
                 return new NotificationResponse($"An error occurred while deleting the Notification: {e.Message}");
             }
+        }
+        
+        public async Task<IEnumerable<Notification>> ListByPostulantIdAsync(int postulantId)
+        {
+            return await _notificationRepository.ListByPostulantIdAsync(postulantId);
+        }
+
+        public async Task<IEnumerable<Notification>> ListByApplicantIdAsync(int applicantId)
+        {
+            return await _notificationRepository.ListByApplicantIdAsync(applicantId);
         }
     }
 }

@@ -3,6 +3,7 @@
     public class PaymentResource
     {
         public int Id { get; set; }
-        public string Method { get; set; }
+        public string Name { get; set; } 
+        public int Cost { get; set; }
     }
 }

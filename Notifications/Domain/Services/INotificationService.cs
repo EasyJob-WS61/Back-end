@@ -13,5 +13,9 @@ namespace EasyJob.API.Notifications.Domain.Services
         Task<NotificationResponse> SaveAsync(Notification notification);
         Task<NotificationResponse> UpdateAsync(int id, Notification notification);
         Task<NotificationResponse> DeleteAsync(int id);
+        
+        Task<IEnumerable<Notification>> ListByPostulantIdAsync(int postulantId);
+        Task<IEnumerable<Notification>> ListByApplicantIdAsync(int postulantId);
+
     }
 }

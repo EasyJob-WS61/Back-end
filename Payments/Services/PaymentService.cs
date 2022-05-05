@@ -1,13 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using EasyJob.API.Applicants.Domain.Models;
-using EasyJob.API.Applicants.Domain.Repositories;
-using EasyJob.API.Applicants.Domain.Services.Communication;
 using EasyJob.API.Payments.Domain.Models;
 using EasyJob.API.Payments.Domain.Repositories;
 using EasyJob.API.Payments.Domain.Services;
-using EasyJob.API.Payments.Domain.Services.Communication;
 using EasyJob.API.Payments.Domain.Services.Communication;
 using Go2Climb.API.Domain.Repositories;
 
@@ -57,7 +53,8 @@ namespace EasyJob.API.Payments.Services
             var existingPayment = await _paymentRepository.FindById(id);
             if (existingPayment == null)
                 return new PaymentResponse("Payment not found");
-            existingPayment.Method = payment.Method;
+            existingPayment.Name = payment.Name;
+            existingPayment.Cost = payment.Cost;
             try
             {
                 _paymentRepository.Update(existingPayment);

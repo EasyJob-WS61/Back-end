@@ -1,3 +1,6 @@
+using System.Collections.Generic;
+using EasyJob.API.Notifications.Domain.Models;
+
 namespace EasyJob.API.Postulants.Domain.Models
 {
     public class Postulant
@@ -9,5 +12,7 @@ namespace EasyJob.API.Postulants.Domain.Models
         public string Email { get; set; }
         public string Password { get; set; }
         public string GithubUser { get; set; }
+        public List<Notification> Notifications { get; set; }
+
     }
 }
