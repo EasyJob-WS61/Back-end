@@ -9,8 +9,12 @@ namespace EasyJob.API.Applicants.Resources
         public string Name { get; set; }
         
         [Required]
-        [MaxLength(50)]
-        public string LastName { get; set; }
+        [MaxLength(11)]
+        public string Ruc { get; set; }
+        
+        [Required]
+        [MaxLength(200)]
+        public string Website { get; set; }
         
         [Required]
         [MaxLength(120)]

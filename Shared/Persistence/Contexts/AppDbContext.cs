@@ -46,7 +46,8 @@ namespace Go2Climb.API.Persistence.Contexts
             builder.Entity<Applicant>().HasKey(p => p.Id);
             builder.Entity<Applicant>().Property(p => p.Id).IsRequired().ValueGeneratedOnAdd();
             builder.Entity<Applicant>().Property(p => p.Name).IsRequired().HasMaxLength(25);
-            builder.Entity<Applicant>().Property(p => p.LastName).IsRequired().HasMaxLength(50);
+            builder.Entity<Applicant>().Property(p => p.Ruc).IsRequired().HasMaxLength(11);
+            builder.Entity<Applicant>().Property(p => p.Website).IsRequired().HasMaxLength(200);
             builder.Entity<Applicant>().Property(p => p.Email).IsRequired().HasMaxLength(120);
             builder.Entity<Applicant>().Property(p => p.Password).IsRequired().HasMaxLength(25);
             builder.Entity<Applicant>().Property(p => p.Photo);
@@ -68,8 +69,7 @@ namespace Go2Climb.API.Persistence.Contexts
             builder.Entity<Announcement>().Property(p => p.Salary).IsRequired().HasMaxLength(120);
             builder.Entity<Announcement>().Property(p => p.Date).IsRequired().HasMaxLength(25);
             builder.Entity<Announcement>().Property(p => p.Visible).IsRequired().HasMaxLength(25);
-            builder.Entity<Announcement>().Property(p => p.Type_money);
-            
+
             builder.Entity<Project>().ToTable("Project");
             builder.Entity<Project>().HasKey(p => p.Id);
             builder.Entity<Project>().Property(p => p.Id).IsRequired().ValueGeneratedOnAdd();

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "sGAtZdnDYbzruPkqgSEX0+CGCJ1LezkJb610el948XPsu7iqDx/J3VnALyFaehW8fFFFFdRJTRvCtvDpof6/NA==",
+  "dgSpecHash": "wsYwAXKvzjrdWeC62ic9Fe/BaU0GLJKJG+Iv5vkSz98RAGSV5/ftpiEYFgX7w4z6i4EyE4ox8vWL7cewriOmwA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\hbcor\\Desktop\\EasyJob\\Back-end\\EasyJob.API.csproj",
+  "projectFilePath": "C:\\Users\\hbcor\\Documents\\MIS CARPETAS\\UNIVERSIDAD\\Sources_01-2022\\3. Evolucion de Software\\Back-end\\EasyJob.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\hbcor\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
     "C:\\Users\\hbcor\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\11.0.0\\automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",

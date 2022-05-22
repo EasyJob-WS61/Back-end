@@ -54,7 +54,8 @@ namespace EasyJob.API.Applicants.Services
             if (existingApplicant == null)
                 return new ApplicantResponse("Applicant not found");
             existingApplicant.Name = activity.Name;
-            existingApplicant.LastName = activity.LastName;
+            existingApplicant.Ruc = activity.Ruc;
+            existingApplicant.Website = activity.Website;
             existingApplicant.Email = activity.Email;
             existingApplicant.Password = activity.Password;
             existingApplicant.Photo = activity.Photo;
