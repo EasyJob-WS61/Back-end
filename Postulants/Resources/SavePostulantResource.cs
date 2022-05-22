@@ -26,5 +26,9 @@ namespace EasyJob.API.Postulants.Resources
         [Required]
         [MaxLength(25)]
         public string GithubUser { get; set; }
+        
+        [Required]
+        [MaxLength(200)]
+        public string Photo { get; set; }
     }
 }

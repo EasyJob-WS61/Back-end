@@ -9,5 +9,6 @@ namespace EasyJob.API.Postulants.Domain.Models
         public string Email { get; set; }
         public string Password { get; set; }
         public string GithubUser { get; set; }
+        public string Photo { get; set; }
     }
 }
