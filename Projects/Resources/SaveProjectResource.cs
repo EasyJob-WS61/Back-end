@@ -16,6 +16,6 @@ namespace EasyJob.API.Projects.Resources
        
         public string Photo { get; set; }
         
-        public int Postulants_id { get; set; }
+        public int PostulantsId { get; set; }
     }
 }

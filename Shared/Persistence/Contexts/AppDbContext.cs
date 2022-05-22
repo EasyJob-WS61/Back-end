@@ -81,7 +81,7 @@ namespace Go2Climb.API.Persistence.Contexts
             builder.Entity<Project>().Property(p => p.Description).IsRequired().HasMaxLength(250);
             builder.Entity<Project>().Property(p => p.Url).IsRequired().HasMaxLength(120);
             builder.Entity<Project>().Property(p => p.Photo).IsRequired().HasMaxLength(25);
-            builder.Entity<Project>().Property(p => p.Postulants_id).IsRequired().HasMaxLength(35);
+            builder.Entity<Project>().Property(p => p.PostulantsId).IsRequired().HasMaxLength(35);
           
             builder.Entity<Message>().ToTable("Messages");
             builder.Entity<Message>().HasKey(p => p.Id);

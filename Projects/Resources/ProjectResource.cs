@@ -7,6 +7,6 @@
         public string Description { get; set; }
         public string Url { get; set; }
         public string Photo { get; set; }
-        public int Postulants_id { get; set; }
+        public int PostulantsId { get; set; }
     }
 }

@@ -56,7 +56,7 @@ namespace EasyJob.API.Projects.Services
                 return new ProjectResponse("project not found");
             existingProject.Description = project.Description;
             existingProject.Photo= project.Photo;
-            existingProject.Postulants_id = project.Postulants_id;
+            existingProject.PostulantsId = project.PostulantsId;
             existingProject.Title = project.Title;
             existingProject.Url = project.Url;
             try
