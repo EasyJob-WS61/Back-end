@@ -64,11 +64,14 @@ namespace Go2Climb.API.Persistence.Contexts
 
             builder.Entity<Announcement>().ToTable("Announcements"); builder.Entity<Announcement>().HasKey(p => p.Id);
             builder.Entity<Announcement>().Property(p => p.Id).IsRequired().ValueGeneratedOnAdd();
-            builder.Entity<Announcement>().Property(p => p.Tittle).IsRequired().HasMaxLength(25);
+            builder.Entity<Announcement>().Property(p => p.Title).IsRequired().HasMaxLength(25);
             builder.Entity<Announcement>().Property(p => p.Description).IsRequired().HasMaxLength(250);
             builder.Entity<Announcement>().Property(p => p.Salary).IsRequired().HasMaxLength(120);
             builder.Entity<Announcement>().Property(p => p.Date).IsRequired().HasMaxLength(25);
             builder.Entity<Announcement>().Property(p => p.Visible).IsRequired().HasMaxLength(25);
+            builder.Entity<Announcement>().Property(p => p.Place).IsRequired().HasMaxLength(100);
+            builder.Entity<Announcement>().Property(p => p.Ability).IsRequired().HasMaxLength(100);
+            builder.Entity<Announcement>().Property(p => p.Period).IsRequired().HasMaxLength(50);
 
             builder.Entity<Project>().ToTable("Project");
             builder.Entity<Project>().HasKey(p => p.Id);

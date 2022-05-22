@@ -60,8 +60,11 @@ namespace EasyJob.API.Announcements.Services
             existingApplicant.Date = announcement.Date;
             existingApplicant.Description = announcement.Description;
             existingApplicant.Salary = announcement.Salary;
-            existingApplicant.Tittle = announcement.Tittle;
+            existingApplicant.Title = announcement.Title;
             existingApplicant.Visible = announcement.Visible;
+            existingApplicant.Ability = announcement.Ability;
+            existingApplicant.Period = announcement.Period;
+            existingApplicant.Place = announcement.Place;
             try
             {
                 _announcementRepository.Update(existingApplicant);
