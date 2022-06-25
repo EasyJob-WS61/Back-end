@@ -69,6 +69,9 @@ namespace Go2Climb.API.Persistence.Contexts
             builder.Entity<Announcement>().Property(p => p.Date).IsRequired().HasMaxLength(25);
             builder.Entity<Announcement>().Property(p => p.Visible).IsRequired().HasMaxLength(25);
             builder.Entity<Announcement>().Property(p => p.Type_money);
+            builder.Entity<Announcement>().Property(p => p.Photo).IsRequired().HasMaxLength(150);
+            builder.Entity<Announcement>().Property(p => p.ApplicantId).IsRequired().HasMaxLength(35);
+            
             
             builder.Entity<Project>().ToTable("Project");
             builder.Entity<Project>().HasKey(p => p.Id);
@@ -83,8 +86,11 @@ namespace Go2Climb.API.Persistence.Contexts
             builder.Entity<Message>().HasKey(p => p.Id);
             builder.Entity<Message>().Property(p => p.Id).IsRequired().ValueGeneratedOnAdd();
             builder.Entity<Message>().Property(p => p.Id).IsRequired().HasMaxLength(25);
-            builder.Entity<Message>().Property(p => p.Description).IsRequired().HasMaxLength(50);
             builder.Entity<Message>().Property(p => p.Date).IsRequired().HasMaxLength(120);
+            builder.Entity<Message>().Property(p => p.fromApplicant).IsRequired().HasMaxLength(35);
+            builder.Entity<Message>().Property(p => p.Postulant_Id).IsRequired().HasMaxLength(35);
+            builder.Entity<Message>().Property(p => p.Applicant_Id).IsRequired().HasMaxLength(35);
+            builder.Entity<Message>().Property(p => p.Text).IsRequired().HasMaxLength(250);
             
             builder.Entity<Interview>().ToTable("Interviews");
             builder.Entity<Interview>().HasKey(p => p.Id);
@@ -99,6 +105,12 @@ namespace Go2Climb.API.Persistence.Contexts
             builder.Entity<Notification>().Property(p => p.Title).IsRequired().ValueGeneratedOnAdd();
             builder.Entity<Notification>().Property(p => p.Description).IsRequired().HasMaxLength(100);
             builder.Entity<Notification>().Property(p => p.Date).IsRequired().HasMaxLength(100);
+            builder.Entity<Notification>().Property(p => p.State).IsRequired().HasMaxLength(100);
+            builder.Entity<Notification>().Property(p => p.ApplicantId).IsRequired().HasMaxLength(100);
+            builder.Entity<Notification>().Property(p => p.Announcement_Id).IsRequired().HasMaxLength(100);
+            builder.Entity<Notification>().Property(p => p.Postulant_Id).IsRequired().HasMaxLength(100);
+            builder.Entity<Notification>().Property(p => p.Feedback).IsRequired().HasMaxLength(200);
+
             
             builder.Entity<Payment>().ToTable("Payments");
             builder.Entity<Payment>().HasKey(p => p.Id);

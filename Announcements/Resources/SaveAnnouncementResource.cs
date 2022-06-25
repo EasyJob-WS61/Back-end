@@ -22,5 +22,11 @@ namespace EasyJob.API.Announcements.Resources
         public string Type_money { get; set; }
         [Required]
         public int Visible { get; set; }
+        [Required]
+        [MaxLength(150)]
+        public string Photo { get; set; }
+        
+        [Required]
+        public int ApplicantId { get; set; }
     }
 }

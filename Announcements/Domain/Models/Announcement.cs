@@ -1,4 +1,6 @@
-﻿namespace EasyJob.API.Announcements.Domain.Models
+﻿using EasyJob.API.Applicants.Domain.Models;
+
+namespace EasyJob.API.Announcements.Domain.Models
 {
     public class Announcement
     {
@@ -10,6 +12,9 @@
         public string Type_money { get; set; }
         public int Visible { get; set; }
         
+        public string Photo { get; set; }
+
+        public int ApplicantId { get; set; }
         
     }
 }

@@ -10,5 +10,7 @@
         public string Date { get; set; }
         public string Type_money { get; set; }
         public int Visible { get; set; }
+        public string Photo { get; set; }
+        public int ApplicantId { get; set; }
     }
 }

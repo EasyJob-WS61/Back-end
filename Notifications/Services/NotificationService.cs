@@ -58,6 +58,11 @@ namespace EasyJob.API.Notifications.Services
             existingNotification.Title = notification.Title;
             existingNotification.Description = notification.Description;
             existingNotification.Date = notification.Date;
+            existingNotification.State = notification.State;
+            existingNotification.ApplicantId = notification.ApplicantId;
+            existingNotification.Announcement_Id = notification.Announcement_Id;
+            existingNotification.Postulant_Id = notification.Postulant_Id;
+            existingNotification.Feedback = notification.Feedback;
             try
             {
                 _notificationRepository.Update(existingNotification);

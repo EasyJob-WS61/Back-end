@@ -63,6 +63,8 @@ namespace EasyJob.API.Announcements.Services
             existingApplicant.Tittle = announcement.Tittle;
             existingApplicant.Type_money = announcement.Type_money;
             existingApplicant.Visible = announcement.Visible;
+            existingApplicant.Photo = announcement.Photo;
+            existingApplicant.ApplicantId = announcement.ApplicantId;
             try
             {
                 _announcementRepository.Update(existingApplicant);
