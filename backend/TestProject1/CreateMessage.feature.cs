@@ -101,7 +101,7 @@ namespace TestProject1
                         "symphony",
                         "image.png"});
 #line 6
-  testRunner.And("a postualnt is already stored", ((string)(null)), table1, "And ");
+  testRunner.And("a postulant is already stored", ((string)(null)), table1, "And ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                         "Id",
@@ -119,7 +119,7 @@ namespace TestProject1
                         "luis@hotmail.com",
                         "123456",
                         "image.jpg"});
-#line 9
+#line 11
         testRunner.And("applicant is already stored", ((string)(null)), table2, "And ");
 #line hidden
         }
@@ -139,7 +139,7 @@ namespace TestProject1
                     "post-message"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add message", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 15
+#line 17
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -163,22 +163,24 @@ this.ScenarioInitialize(scenarioInfo);
  this.FeatureBackground();
 #line hidden
                 TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Description",
                             "fromApplicant",
                             "Postulant_Id",
                             "Applicant_Id",
                             "Date",
                             "Text"});
                 table3.AddRow(new string[] {
-                            "sebastian",
+                            "string",
                             "1",
                             "1",
-                            "20-10-21",
+                            "1",
+                            "unafecha",
                             "hola como estas"});
-#line 16
+#line 18
  testRunner.When("a message request is send", ((string)(null)), table3, "When ");
 #line hidden
-#line 19
- testRunner.Then("a Response with status 200 is received", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 21
+ testRunner.Then("a Response with status 200 is Received", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

@@ -6,7 +6,7 @@
 		 And a postualnt is already stored
 		 | Id | Name      | LastName | Description       | Email        | Password | GithubUser | Photo     |
 		 | 1  | sebastian | roque    | flutter developer | rn@gmail.com | 123123   | symphony   | image.png |
-
+		 
 @post-project
 Scenario: Add project
 	When a project request is sent

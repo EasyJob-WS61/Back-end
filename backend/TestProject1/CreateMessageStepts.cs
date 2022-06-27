@@ -9,8 +9,6 @@ using EasyJob.API;
 using EasyJob.API.Applicants.Resources;
 using EasyJob.API.Messages.Resources;
 using EasyJob.API.Postulants.Resources;
-using EasyJob.API.Projects.Resources;
-using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Mvc.Testing;
 using SpecFlow.Internal.Json;
 using TechTalk.SpecFlow;
@@ -20,11 +18,11 @@ using Xunit;
 namespace TestProject1;
 
 [Binding]
-public class CreateMessageStepsDefinition
+public class CreateMessageStepts
 {
     private readonly WebApplicationFactory<Startup> _factory;
 
-    public CreateMessageStepsDefinition(WebApplicationFactory<Startup> factory)
+    public CreateMessageStepts(WebApplicationFactory<Startup> factory)
     {
         _factory = factory;
     }
@@ -36,10 +34,18 @@ public class CreateMessageStepsDefinition
     private ApplicantResource applicant { get; set; }
     private MessagesResources message { get; set; }
     [Given(@"to Endpoint https://localhost:(.*)/api/v(.*)/Messages")]
-    public void GivenToEndpointHttpsLocalhostApivMessages(int port, int version)
+    public void GivenToEndpointHttpsLocalhostApiVMessages(int port, int version)
     {
         baseUri = new Uri($"https://localhost:{port}/api/v{version}/Messages");
         _client = _factory.CreateClient(new WebApplicationFactoryClientOptions {BaseAddress = baseUri});
+    }
+
+    [Given(@"a postulant is already stored")]
+    public void GivenAPostulantIsAlreadyStored(Table postulantResource)
+    {
+        var resource = postulantResource.CreateSet<SavePostulantResource>().First();
+        var content = new StringContent(resource.ToJson(), Encoding.UTF8, MediaTypeNames.Application.Json);
+        response = _client.PostAsync(baseUri, content);
     }
 
     [Given(@"applicant is already stored")]
@@ -50,15 +56,6 @@ public class CreateMessageStepsDefinition
         response = _client.PostAsync(baseUri, content);
     }
 
-    [Given(@"postulant is already stored")]
-    public void GivenPostulantIsAlreadyStored(Table postulantResource)
-    {
-        var resource = postulantResource.CreateSet<SavePostulantResource>().First();
-        var content = new StringContent(resource.ToJson(), Encoding.UTF8, MediaTypeNames.Application.Json);
-        response = _client.PostAsync(baseUri, content);
-    }
-    
-    
     [When(@"a message request is send")]
     public void WhenAMessageRequestIsSend(Table messageResource)
     {
@@ -66,8 +63,8 @@ public class CreateMessageStepsDefinition
         var content = new StringContent(resource.ToJson(), Encoding.UTF8, MediaTypeNames.Application.Json);
         response = _client.PostAsync(baseUri, content);
     }
-    
-    [Then(@"a Response with status (.*) is received")]
+
+    [Then(@"a Response with status (.*) is Received")]
     public void ThenAResponseWithStatusIsReceived(int spectStatus)
     {
         var spectStatusCode = ((HttpStatusCode)spectStatus).ToString();
