@@ -19,7 +19,7 @@ namespace TestProject1
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.9.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public partial class CreateMessageFeature : object, Xunit.IClassFixture<CreateMessageFeature.FixtureData>, System.IDisposable
+    public partial class CreateAnnouncementsFeature : object, Xunit.IClassFixture<CreateAnnouncementsFeature.FixtureData>, System.IDisposable
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
@@ -28,10 +28,10 @@ namespace TestProject1
         
         private Xunit.Abstractions.ITestOutputHelper _testOutputHelper;
         
-#line 1 "CreateMessage.feature"
+#line 1 "CreateAnnouncements.feature"
 #line hidden
         
-        public CreateMessageFeature(CreateMessageFeature.FixtureData fixtureData, TestProject1_XUnitAssemblyFixture assemblyFixture, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
+        public CreateAnnouncementsFeature(CreateAnnouncementsFeature.FixtureData fixtureData, TestProject1_XUnitAssemblyFixture assemblyFixture, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
         {
             this._testOutputHelper = testOutputHelper;
             this.TestInitialize();
@@ -40,7 +40,7 @@ namespace TestProject1
         public static void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "", "CreateMessage", "\tas aplicant an postulant\r\n\ti want to send messages.", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "", "CreateAnnouncements", "\tAs a Applicant I want to create announcements\r\n\tI want to create announcements", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -80,30 +80,9 @@ namespace TestProject1
 #line 4
  #line hidden
 #line 5
-  testRunner.Given("to Endpoint https://localhost:5001/api/v1/Messages", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+  testRunner.Given("to Endpoint https://localhost:5001/api/v1/Announcement", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-            TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Id",
-                        "Name",
-                        "LastName",
-                        "Description",
-                        "Email",
-                        "Password",
-                        "GithubUser",
-                        "Photo"});
-            table3.AddRow(new string[] {
-                        "1",
-                        "sebastian",
-                        "roque",
-                        "flutter developer",
-                        "rn@gmail.com",
-                        "123123",
-                        "symphony",
-                        "image.png"});
-#line 6
-  testRunner.And("a postulant is already stored", ((string)(null)), table3, "And ");
-#line hidden
-            TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
                         "Id",
                         "Name",
                         "Ruc",
@@ -111,7 +90,7 @@ namespace TestProject1
                         "Email",
                         "Password",
                         "Photo"});
-            table4.AddRow(new string[] {
+            table1.AddRow(new string[] {
                         "1",
                         "luis",
                         "032645",
@@ -119,8 +98,8 @@ namespace TestProject1
                         "luis@hotmail.com",
                         "123456",
                         "image.jpg"});
-#line 11
-        testRunner.And("applicant is already stored", ((string)(null)), table4, "And ");
+#line 6
+  testRunner.And("a Applicant is already stored", ((string)(null)), table1, "And ");
 #line hidden
         }
         
@@ -129,17 +108,17 @@ namespace TestProject1
             this.TestTearDown();
         }
         
-        [Xunit.SkippableFactAttribute(DisplayName="Add message")]
-        [Xunit.TraitAttribute("FeatureTitle", "CreateMessage")]
-        [Xunit.TraitAttribute("Description", "Add message")]
-        [Xunit.TraitAttribute("Category", "post-message")]
-        public virtual void AddMessage()
+        [Xunit.SkippableFactAttribute(DisplayName="Add announcement")]
+        [Xunit.TraitAttribute("FeatureTitle", "CreateAnnouncements")]
+        [Xunit.TraitAttribute("Description", "Add announcement")]
+        [Xunit.TraitAttribute("Category", "post-announcement")]
+        public virtual void AddAnnouncement()
         {
             string[] tagsOfScenario = new string[] {
-                    "post-message"};
+                    "post-announcement"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add message", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 17
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add announcement", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 11
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -162,25 +141,33 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
  this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Title",
                             "Description",
-                            "fromApplicant",
-                            "Postulant_Id",
-                            "Applicant_Id",
+                            "Salary",
                             "Date",
-                            "Text"});
-                table5.AddRow(new string[] {
+                            "Visible",
+                            "Photo",
+                            "ApplicantId",
+                            "Place",
+                            "Ability",
+                            "Period"});
+                table2.AddRow(new string[] {
+                            "string",
+                            "string",
+                            "45.2",
+                            "string",
+                            "0",
                             "string",
                             "1",
-                            "1",
-                            "1",
-                            "unafecha",
-                            "hola como estas"});
-#line 18
- testRunner.When("a message request is send", ((string)(null)), table5, "When ");
+                            "string",
+                            "string",
+                            "string"});
+#line 12
+ testRunner.When("a announcement request is send", ((string)(null)), table2, "When ");
 #line hidden
-#line 21
- testRunner.Then("a Response with status 200 is Received", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 15
+   testRunner.Then("a some Response with status 200 is Received", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -193,12 +180,12 @@ this.ScenarioInitialize(scenarioInfo);
             
             public FixtureData()
             {
-                CreateMessageFeature.FeatureSetup();
+                CreateAnnouncementsFeature.FeatureSetup();
             }
             
             void System.IDisposable.Dispose()
             {
-                CreateMessageFeature.FeatureTearDown();
+                CreateAnnouncementsFeature.FeatureTearDown();
             }
         }
     }

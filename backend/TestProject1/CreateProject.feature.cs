@@ -82,7 +82,7 @@ namespace TestProject1
 #line 5
    testRunner.Given("the Endpoint https://localhost:5001/api/v1/Projects is available", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-            TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
                         "Id",
                         "Name",
                         "LastName",
@@ -91,7 +91,7 @@ namespace TestProject1
                         "Password",
                         "GithubUser",
                         "Photo"});
-            table4.AddRow(new string[] {
+            table6.AddRow(new string[] {
                         "1",
                         "sebastian",
                         "roque",
@@ -101,7 +101,7 @@ namespace TestProject1
                         "symphony",
                         "image.png"});
 #line 6
-   testRunner.And("a postualnt is already stored", ((string)(null)), table4, "And ");
+   testRunner.And("a postualnt is already stored", ((string)(null)), table6, "And ");
 #line hidden
         }
         
@@ -143,20 +143,20 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
  this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
                             "Title",
                             "Description",
                             "Url",
                             "Photo",
                             "PostulantsId"});
-                table5.AddRow(new string[] {
+                table7.AddRow(new string[] {
                             "my project",
                             "is my project btw",
                             "sdfsf",
                             "sdfsdf",
                             "1"});
 #line 12
- testRunner.When("a project request is sent", ((string)(null)), table5, "When ");
+ testRunner.When("a project request is sent", ((string)(null)), table7, "When ");
 #line hidden
 #line 15
  testRunner.Then("a Response with status 200 is received", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
