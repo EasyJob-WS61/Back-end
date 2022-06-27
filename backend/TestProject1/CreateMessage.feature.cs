@@ -19,7 +19,7 @@ namespace TestProject1
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.9.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public partial class CreateProjectFeature : object, Xunit.IClassFixture<CreateProjectFeature.FixtureData>, System.IDisposable
+    public partial class CreateMessageFeature : object, Xunit.IClassFixture<CreateMessageFeature.FixtureData>, System.IDisposable
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
@@ -28,10 +28,10 @@ namespace TestProject1
         
         private Xunit.Abstractions.ITestOutputHelper _testOutputHelper;
         
-#line 1 "CreateProject.feature"
+#line 1 "CreateMessage.feature"
 #line hidden
         
-        public CreateProjectFeature(CreateProjectFeature.FixtureData fixtureData, TestProject1_XUnitAssemblyFixture assemblyFixture, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
+        public CreateMessageFeature(CreateMessageFeature.FixtureData fixtureData, TestProject1_XUnitAssemblyFixture assemblyFixture, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
         {
             this._testOutputHelper = testOutputHelper;
             this.TestInitialize();
@@ -40,7 +40,7 @@ namespace TestProject1
         public static void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "", "CreateProject", "\t\tAs an applicant \r\n\t\tI want like to add projects to my profile.", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "", "CreateMessage", "\tas aplicant an postulant\r\n\ti want to send messages.", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -80,9 +80,9 @@ namespace TestProject1
 #line 4
  #line hidden
 #line 5
-   testRunner.Given("the Endpoint https://localhost:5001/api/v1/Projects is available", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+  testRunner.Given("to Endpoint https://localhost:5001/api/v1/Messages", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-            TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
                         "Id",
                         "Name",
                         "LastName",
@@ -91,7 +91,7 @@ namespace TestProject1
                         "Password",
                         "GithubUser",
                         "Photo"});
-            table4.AddRow(new string[] {
+            table1.AddRow(new string[] {
                         "1",
                         "sebastian",
                         "roque",
@@ -101,7 +101,26 @@ namespace TestProject1
                         "symphony",
                         "image.png"});
 #line 6
-   testRunner.And("a postualnt is already stored", ((string)(null)), table4, "And ");
+  testRunner.And("a postualnt is already stored", ((string)(null)), table1, "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Id",
+                        "Name",
+                        "Ruc",
+                        "Website",
+                        "Email",
+                        "Password",
+                        "Photo"});
+            table2.AddRow(new string[] {
+                        "1",
+                        "luis",
+                        "032645",
+                        "youtube.com",
+                        "luis@hotmail.com",
+                        "123456",
+                        "image.jpg"});
+#line 9
+        testRunner.And("applicant is already stored", ((string)(null)), table2, "And ");
 #line hidden
         }
         
@@ -110,17 +129,17 @@ namespace TestProject1
             this.TestTearDown();
         }
         
-        [Xunit.SkippableFactAttribute(DisplayName="Add project")]
-        [Xunit.TraitAttribute("FeatureTitle", "CreateProject")]
-        [Xunit.TraitAttribute("Description", "Add project")]
-        [Xunit.TraitAttribute("Category", "post-project")]
-        public virtual void AddProject()
+        [Xunit.SkippableFactAttribute(DisplayName="Add message")]
+        [Xunit.TraitAttribute("FeatureTitle", "CreateMessage")]
+        [Xunit.TraitAttribute("Description", "Add message")]
+        [Xunit.TraitAttribute("Category", "post-message")]
+        public virtual void AddMessage()
         {
             string[] tagsOfScenario = new string[] {
-                    "post-project"};
+                    "post-message"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add project", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 11
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add message", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 15
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -143,22 +162,22 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
  this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Title",
-                            "Description",
-                            "Url",
-                            "Photo",
-                            "PostulantsId"});
-                table5.AddRow(new string[] {
-                            "my project",
-                            "is my project btw",
-                            "sdfsf",
-                            "sdfsdf",
-                            "1"});
-#line 12
- testRunner.When("a project request is sent", ((string)(null)), table5, "When ");
+                TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
+                            "fromApplicant",
+                            "Postulant_Id",
+                            "Applicant_Id",
+                            "Date",
+                            "Text"});
+                table3.AddRow(new string[] {
+                            "sebastian",
+                            "1",
+                            "1",
+                            "20-10-21",
+                            "hola como estas"});
+#line 16
+ testRunner.When("a message request is send", ((string)(null)), table3, "When ");
 #line hidden
-#line 15
+#line 19
  testRunner.Then("a Response with status 200 is received", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -172,12 +191,12 @@ this.ScenarioInitialize(scenarioInfo);
             
             public FixtureData()
             {
-                CreateProjectFeature.FeatureSetup();
+                CreateMessageFeature.FeatureSetup();
             }
             
             void System.IDisposable.Dispose()
             {
-                CreateProjectFeature.FeatureTearDown();
+                CreateMessageFeature.FeatureTearDown();
             }
         }
     }
